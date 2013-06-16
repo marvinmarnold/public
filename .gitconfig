@@ -1,0 +1,41 @@
+[user]
+        name = Marvin Arnold
+        email = marvinmarnold@gmail.com
+
+[core]
+        editor = emacs
+        whitespace = trailing-space,space-before-tab,tab-in-indent
+
+[alias]
+        gl = log --graph --decorate --pretty=oneline --abbrev-commit --all --date-orde\
+r
+        glb = log --graph --decorate --pretty=oneline --abbrev-commit
+        gla = !trap "" 13 && git log --graph --oneline --decorate --all $(git reflog |\
+ awk '{print $1}')
+        b = branch
+        d = diff
+        dc = diff --cached
+        st = status -sb
+        ci = commit
+        co = checkout
+        up = checkout
+        ff = merge --ff-only
+
+[merge]
+        stat = False
+        tool = kdiff3
+
+[mergetool "kdiff3"]
+        path = /usr/bin/kdiff3
+
+[color]
+        ui = auto
+
+[color "branch"]
+        current = green reverse
+        local = green
+        remote = red
+[push]
+        default = matching
+[gui]
+	recentrepo = /home/pili/workspace/maputo
